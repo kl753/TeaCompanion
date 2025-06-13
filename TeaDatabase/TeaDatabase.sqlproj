@@ -61,6 +61,7 @@
     <Build Include="User.sql" />
     <Build Include="Tea.sql" />
     <Build Include="FlavorTag.sql" />
+    <Build Include="TeaFlavor.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="TeaDatabase.refactorlog" />
