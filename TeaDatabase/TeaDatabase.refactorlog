@@ -35,4 +35,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="TagID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="73cf88b6-8520-48e2-a0ec-7f112171c5a3" ChangeDateTime="06/13/2025 18:12:36">
+    <Property Name="ElementName" Value="[dbo].[UserStash].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserStash]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StashItemID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="20fc9d77-2f66-4e32-9282-9b55f982c096" ChangeDateTime="06/13/2025 18:21:16">
+    <Property Name="ElementName" Value="[dbo].[BrewSession].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BrewSession]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BrewID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9ce5d69c-9347-44fb-a605-eb693fa6f25f" ChangeDateTime="06/13/2025 18:35:42">
+    <Property Name="ElementName" Value="[dbo].[BrewSession].[T]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BrewSession]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Temp" />
+  </Operation>
 </Operations>
