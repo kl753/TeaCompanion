@@ -7,4 +7,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="UserId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="275cbc92-4be8-4f0c-acdc-cb8e902bdeb0" ChangeDateTime="06/13/2025 16:33:18">
+    <Property Name="ElementName" Value="[dbo].[Tea].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeaID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="adaa1a4d-3645-488e-be77-a6d234be9d96" ChangeDateTime="06/13/2025 17:40:10">
+    <Property Name="ElementName" Value="[dbo].[FlavorTag].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FlavorTag]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TagID" />
+  </Operation>
 </Operations>

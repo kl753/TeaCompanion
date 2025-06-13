@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[FlavorTag]
+(
+	[TagID] NCHAR(10) NOT NULL PRIMARY KEY, 
+    [TagName] NCHAR(10) UNIQUE NOT NULL
+)
