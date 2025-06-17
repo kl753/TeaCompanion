@@ -11,5 +11,7 @@ namespace TeaAPI.Interfaces
         Task<Tea?> UpdateTeaAsync(int id, Tea tea); //Update an existing tea
         Task<bool> DeleteTeaAsync(int id); //Delete a tea by ID
         Task<bool> SaveChangesAsync(); //For unit of work pattern
+        Task UpdateTeaAsync(Tea existingTea);
+        Task DeleteTeaAsync(Tea teaToDelete);
     }
 }
