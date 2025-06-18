@@ -1,6 +1,6 @@
-@TeaAPI_HostAddress = http://localhost:5215
+@TeaAPI_HostAddress = http://localhost:1997
 
-GET {{TeaAPI_HostAddress}}/weatherforecast/
+GET {{TeaAPI_HostAddress}}/TeaAPI/
 Accept: application/json
 
 ###
