@@ -14,6 +14,6 @@ namespace TeaAPI.Services
         Task<TeaDto?> GetTeaByIdAsync(int id); // Get tea by Id
         Task<TeaDto> CreateTeaAsync(CreateTeaDto createTeaDto); // Create a new tea
         Task<TeaDto?> UpdateTeaAsync(int id, UpdateTeaDto updateTeaDto); // Update an existing tea
-        Task DeleteTeaAsync(int id); // Delete a tea by Id
+        Task<bool> DeleteTeaAsync(int id); // Delete a tea by Id
     }
 }
