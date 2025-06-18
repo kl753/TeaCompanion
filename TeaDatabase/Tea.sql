@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[Tea]
 (
 	[TeaID] INT NOT NULL PRIMARY KEY, 
-    [TeaName] NVARCHAR(50) UNIQUE NOT NULL, 
-    [Type] NCHAR(10) NOT NULL, 
-    [Subtype] NCHAR(10) NULL, 
-    [CountryOrigin] NCHAR(10) NOT NULL, 
-    [Region] NCHAR(10) NULL, 
+    [TeaName] NVARCHAR(100) UNIQUE NOT NULL, 
+    [Type] NCHAR(50) NOT NULL, 
+    [Subtype] NCHAR(50) NULL, 
+    [CountryOfOrigin] NCHAR(100) NOT NULL, 
+    [Region] NCHAR(50) NULL, 
     [HarvestSeason] NCHAR(10) NULL, 
     [OxidationLevel] INT NULL, 
     [ProcessingMethod] NVARCHAR(50) NULL, 
@@ -14,7 +14,7 @@
     [RecTemp] INT NOT NULL, --In celsius
     [RecSteepTime] INT NOT NULL,  --In seconds
     [RecWaterAmount] INT NULL, --In mls
-    [Description] NVARCHAR(50) NULL, 
-    [ImageURL] NCHAR(10) NULL, 
+    [Description] NVARCHAR(500) NULL, 
+    [ImageURL] NCHAR(50) NULL, 
     [AvgRating] FLOAT NULL
 )

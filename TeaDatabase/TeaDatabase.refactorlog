@@ -56,4 +56,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Temp" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="2bcf4645-9825-4ed8-91ca-01f95d2e752b" ChangeDateTime="06/18/2025 21:38:59">
+    <Property Name="ElementName" Value="[dbo].[Tea].[CountryOrigin]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tea]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CountryOfOrigin" />
+  </Operation>
 </Operations>
