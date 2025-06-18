@@ -63,7 +63,7 @@ namespace TeaAPI.Services
             }
 
             await _teaRepository.DeleteTeaAsync(teaToDelete);
-            await _teaRepository.SaveChangesAsync(); //Returns true if deletion was successful 
+            return await _teaRepository.SaveChangesAsync(); //Returns true if deletion was successful 
         }
     }
 }
