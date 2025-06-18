@@ -1,6 +1,6 @@
 ﻿/*Repository interface for Tea
  * Layer abstracting data access logic.
- * Inteface for Tea repository
+ * Interface for Tea repository
  */
 using TeaAPI.Models; // Assuming the Tea model is in the Models namespace
 
