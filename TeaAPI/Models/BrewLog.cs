@@ -31,7 +31,7 @@ namespace TeaAPI.Models
         public int? WaterAmount { get; set; }
 
         [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
-        public int? UserRating { get; set; }
+        public int? Rating { get; set; }
 
         [MaxLength(1000)]
         public string? BrewNotes { get; set; } //e.g., "Used a gaiwan", "Added honey", "Felt too bitter"

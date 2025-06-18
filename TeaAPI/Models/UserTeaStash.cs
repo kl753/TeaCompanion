@@ -38,6 +38,6 @@ namespace TeaAPI.Models
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         //Navigation property for brewing sessions related to this specific stash item
-        public ICollection<BrewingLog>? BrewingLogs { get; set; }
+        public ICollection<BrewLog>? BrewLogs { get; set; }
     }
 }
