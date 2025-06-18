@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TeaDatabase", "TeaDatabase\TeaDatabase.sqlproj", "{C4F184FF-D20A-4633-BDE6-9F1F567105D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaAPI", "TeaAPI\TeaAPI.csproj", "{237FB245-63E9-4092-B033-C4DB39373B54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "TeaAPI\TestAPI.csproj", "{237FB245-63E9-4092-B033-C4DB39373B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
