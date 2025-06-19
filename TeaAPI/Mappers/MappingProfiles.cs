@@ -29,6 +29,13 @@ namespace TeaAPI.Mappers
                 .ForMember(dest =>dest.PasswordHash, opt => opt.Ignore()) // Ignore PasswordHash during creation
                 .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Ignore CreatedAt during creation
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null)); // Ignore null values
+
+            //UserTeaStashEntry Mappings
+            CreateMap<UserTeaStashEntry, UserTeaStashEntryDto>()
+                .ForMember(dest => dest.TeaName, opt => opt.MapFrom(src => src.Tea.Name)); // Map Tea property
+            CreateMap<CreateUserTeaStashEntryDto, UserTeaStashEntry>();
+            CreateMap<UpdateUserTeaStashEntryDto, UserTeaStashEntry>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null)); // Partial update
         }
     }
 }
