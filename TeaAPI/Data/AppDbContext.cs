@@ -55,7 +55,7 @@ namespace TeaAPI.Data
             );
 
             //User entity configuration
-            string hashedPassword = HashPassword("password123"); // Example hashed password
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword("password123"); // Example password hash
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
