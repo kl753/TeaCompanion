@@ -18,6 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //Register Repositories and services
 builder.Services.AddScoped<ITeaRepository, TeaRepository>();
 builder.Services.AddScoped<ITeaService, TeaService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
