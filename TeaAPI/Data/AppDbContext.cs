@@ -67,6 +67,33 @@ namespace TeaAPI.Data
                     UpdatedAt = DateTime.UtcNow
                 }
             );
+
+            //UserTeaStashEntry entity configuration
+            modelBuilder.Entity<UserTeaStashEntry>()
+                .HasOne(uts => uts.User)
+                .WithMany(u => u.TeaStashEntries)
+                .HasForeignKey(uts => uts.UserId);
+
+            modelBuilder.Entity<UserTeaStashEntry>()
+                .HasOne(uts => uts.Tea)
+                .WithMany(t => t.TeaStashEntries)
+                .HasForeignKey(uts => uts.TeaId);
+
+            modelBuilder.Entity<UserTeaStashEntry>().HasData(
+                new UserTeaStashEntry
+                {
+                    Id = 1,
+                    UserId = 1, // Assuming the user with Id 1 exists
+                    TeaId = 1, // Assuming the tea with Id 1 exists
+                    Quantity = "100g", // Example quantity
+                    Source = "Local store",
+                    PurchaseDate = DateTime.UtcNow, // Purchased 30 days ago
+                    StorageNotes = "Keep in a cool, dry place.",
+                    PersonalNotes = "My favorite green tea!",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
+            );
         }
 
         //// Helper method to hash passwords using BouncyCastle
