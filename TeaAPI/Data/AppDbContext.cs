@@ -76,7 +76,7 @@ namespace TeaAPI.Data
 
             modelBuilder.Entity<UserTeaStashEntry>()
                 .HasOne(uts => uts.Tea)
-                .WithMany(t => t.TeaStashEntries)
+                .WithMany(t => t.UserTeaStashEntries)
                 .HasForeignKey(uts => uts.TeaId);
 
             modelBuilder.Entity<UserTeaStashEntry>().HasData(
