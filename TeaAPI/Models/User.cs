@@ -30,7 +30,7 @@ namespace TeaAPI.Models
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow; // Default to current time
 
         //Navigation properties for Tea Stash or Brew Logs
-        // public ICollection<UserTeaStashEntry>? TeaStash { get; set; }
+        public ICollection<UserTeaStashEntry>? TeaStash { get; set; }
         // public ICollection<BrewSession>? BrewSession { get; set; }
     }
 }

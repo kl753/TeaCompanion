@@ -36,6 +36,9 @@ namespace TeaAPI.Models
         //Could add navigation properties with FlavorTag
         //public ICollection<FlavorTag> FlavorTags { get; set; }
 
+        public ICollection<UserTeaStashEntry>? TeaStashEntries { get; set; } // Navigation property for user's tea stash entries
+        //public ICollection<BrewSession>? BrewSessions { get; set; } // Navigation property for brew sessions
+
         //Placeholder for created/updated timestamps
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
