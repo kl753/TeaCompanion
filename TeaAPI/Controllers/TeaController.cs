@@ -2,6 +2,7 @@
  * Handles GET, POST, PUT, and DELETE requests for tea data.
  * Uses service layer to perform operations on tea data.
  */
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TeaAPI.DTOs; // Assuming DTOs are in the DTOs namespace
 using TeaAPI.Services; // Assuming the service layer is in the Services namespace
@@ -10,6 +11,7 @@ namespace TeaAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")] // api/teas
+    [Authorize] // Ensure the user is authenticated for all endpoints
     public class TeaController : ControllerBase
     {
         private readonly ITeaService _teaService;
@@ -24,6 +26,10 @@ namespace TeaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TeaDto>))]
         public async Task<ActionResult<IEnumerable<TeaDto>>> GetTeas()
         {
+            //Access authenticated user's claims
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            Console.WriteLine($"Authenticated User ID accessing teas: {userId}"); // For debugging purposes
+
             var teas = await _teaService.GetAllTeasAsync();
             return Ok(teas);
         }
