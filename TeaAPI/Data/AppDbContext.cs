@@ -20,6 +20,7 @@ namespace TeaAPI.Data
         // DbSet for Tea and User models
         public DbSet<Tea> Teas { get; set; } = null!; // Represents the Tea.sql table
         public DbSet<User> Users { get; set; } = null!; // Represents the User.sql table
+        public DbSet<UserTeaStashEntry> UserTeaStashEntries { get; set; } = null!; // Represents the UserTeaStashEntry table
 
         // Override OnModelCreating if you need to configure the model further
         protected override void OnModelCreating(ModelBuilder modelBuilder)
