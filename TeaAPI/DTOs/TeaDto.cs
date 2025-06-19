@@ -15,7 +15,7 @@ namespace TeaAPI.DTOs
         public int? RecTemp { get; set; } // Recommended brewing temperature in Celsius
         public int? RecSteepTime { get; set; } // Recommended steeping time in seconds
         
-        //public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Timestamp when the tea was created
-        //public DateTime UpdatedAt { get; set; } = DateTime.UtcNow; // Timestamp when the tea was last updated
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow; // Timestamp when the tea was created
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow; // Timestamp when the tea was last updated
     }
 }
