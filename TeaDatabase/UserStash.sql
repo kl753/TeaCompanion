@@ -5,7 +5,7 @@
 	[TeaID] INT NOT NULL, 
     [Quanity] FLOAT NULL, --In grams 
     [PurchaseDate] DATE NULL, 
-    [Source] NVARCHAR(50) NULL, 
+    [Source] NVARCHAR(250) NULL, 
     [StorageNotes] TEXT NULL, 
     [PersonalNotes] TEXT NULL, 
     [IsCustomTea] BIT NULL DEFAULT 0, 
