@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL; // Add this using directive for Npgsql
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TeaAPI.Data; // Assuming the DbContext is in the Data namespace
 using TeaAPI.Mappers; // Assuming the AutoMapper profiles are in the Mappers namespace
 using TeaAPI.Services; // Assuming the service layer is in the Services namespace
@@ -20,6 +23,33 @@ builder.Services.AddScoped<ITeaRepository, TeaRepository>();
 builder.Services.AddScoped<ITeaService, TeaService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+//Configure JWT authentication
+var jwtSettings = builder.Configuration.GetSection("Jwt");
+var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; // Set to true in production
+    options.SaveToken = true; // Save the token in the authentication properties
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"]
+        ValidateLifetime = true, // Validate the token's expiration time
+        ClockSkew = TimeSpan.Zero // Set clock skew to zero to avoid issues with token expiration
+    };
+});
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
@@ -47,6 +77,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication(); // Enable authentication middleware
 
 app.UseAuthorization();
 
