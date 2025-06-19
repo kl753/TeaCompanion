@@ -107,5 +107,15 @@ namespace TeaAPI.Services
             await _userRepository.DeleteUserAsync(userToDelete);
             return await _userRepository.SaveChangesAsync();
         }
+
+        public Task<UserDto?> GetUserByUsernameAsync(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<UserDto?> GetUserByEmailAsync(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
