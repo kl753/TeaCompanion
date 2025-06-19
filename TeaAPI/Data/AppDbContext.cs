@@ -69,16 +69,16 @@ namespace TeaAPI.Data
             );
         }
 
-        // Helper method to hash passwords using BouncyCastle
-        private static string HashPassword(string password)
-        {
-            var digest = new Sha256Digest();
-            var generator = new Pkcs5S2ParametersGenerator(digest);
-            var salt = new byte[16];
-            new SecureRandom().NextBytes(salt);
-            generator.Init(PbeParametersGenerator.Pkcs5PasswordToBytes(password.ToCharArray()), salt, 10000);
-            var key = (KeyParameter)generator.GenerateDerivedMacParameters(256);
-            return Convert.ToBase64String(key.GetKey());
-        }
+        //// Helper method to hash passwords using BouncyCastle
+        //private static string HashPassword(string password)
+        //{
+        //    var digest = new Sha256Digest();
+        //    var generator = new Pkcs5S2ParametersGenerator(digest);
+        //    var salt = new byte[16];
+        //    new SecureRandom().NextBytes(salt);
+        //    generator.Init(PbeParametersGenerator.Pkcs5PasswordToBytes(password.ToCharArray()), salt, 10000);
+        //    var key = (KeyParameter)generator.GenerateDerivedMacParameters(256);
+        //    return Convert.ToBase64String(key.GetKey());
+        //}
     }
 }
