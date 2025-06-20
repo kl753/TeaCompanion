@@ -95,6 +95,35 @@ namespace TeaAPI.Data
                     UpdatedAt = DateTime.UtcNow
                 }
             );
+
+            // BrewSession entity configuration
+            modelBuilder.Entity<BrewSession>()
+                .HasOne(bs => bs.User)
+                .WithMany(u => u.BrewSessions)
+                .HasForeignKey(bs => bs.UserId);
+
+            modelBuilder.Entity<BrewSession>()
+                .HasOne(bs => bs.Tea)
+                .WithMany(t => t.BrewSessions)
+                .HasForeignKey(bs => bs.TeaId);
+
+            modelBuilder.Entity<BrewSession>().HasData(
+                new BrewSession
+                {
+                    Id = 1,
+                    UserId = 1, // Assuming the user with Id 1 exists
+                    TeaId = 1, // Assuming the tea with Id 1 exists
+                    SessionDateTime = DateTime.UtcNow.AddDays(-30), // Brewed 30 days ago
+                    Temp = 80, // Temperature in Celsius
+                    SteepTime = 180, // Steep time in seconds
+                    Rating = 5, // User rating for the brew session (0-5)
+                    BrewMethod = "Gongfu", // Optional brew method (e.g., Gongfu, Western, Cold Brew)
+                    PersonalBrewNotes = "Perfect brew!",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
+            );
+
         }
 
         //// Helper method to hash passwords using BouncyCastle
